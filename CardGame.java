@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class CardGame {
 	
 	private static LinkList cardList = new LinkList();  // make list
+    private static Scanner scanner = new Scanner(System.in); //Addition 1 - Initiates Scanner
 
 	public static void main(String[] args) {
 
@@ -46,21 +47,13 @@ public class CardGame {
             System.err.println("Error reading file: " + e.getMessage());
         }
 
-        // Print the loaded cards
-        System.out.println("Cards loaded:");
-        cardList.displayList();
-		
-		Card[] playerHand = new Card[5];
-		for(int i = 0; i < playerHand.length; i++)
-			playerHand[i] = cardList.getFirst();
-		
-		System.out.println("players hand");
-		for(int i = 0; i < playerHand.length; i++)
-			System.out.println(playerHand[i]);
-		
-		System.out.println();
-		System.out.println("the deck");
-		cardList.displayList();
+        // Addition 2: Blackjack Game Starts
+        
+        System.out.println("Welcome to Blackjack.");
+
+        
+        
+
 
 	}//end main
 
