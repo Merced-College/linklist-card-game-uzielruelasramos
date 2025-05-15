@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class CardGame {
 	
 	private static LinkList cardList = new LinkList();  // make list
-    private static Scanner scanner = new Scanner(System.in); //Addition 1 - Initiates Scanner
+    private static Scanner scanner = new Scanner(System.in); // Addition - Initiates Scanner.
 
 	public static void main(String[] args) {
 
@@ -47,13 +47,40 @@ public class CardGame {
             System.err.println("Error reading file: " + e.getMessage());
         }
 
-        // Addition 2: Blackjack Game Starts
+        // Addition: Blackjack Game Starts.
         
         System.out.println("Welcome to Blackjack.");
 
+        // Addition: Method to draw two cards for the user.
+        int playerScore = 0;
+        System.out.println("\nYour starting hand:");
+        for(int i = 0; i < 2; i++) {
+            Card card = cardList.getFirst();
+            System.out.println(card);
+            playerScore += card.getCardValue();
+        }
         
-        
+        //Addition: Players turn. Method for player to draw cards, stand, hit, calculate score.
+        boolean playerTurn = true;
+        while (playerTurn && playerScore < 21) {
+            System.out.println("Your current score: " + playerScore);
+            System.out.println("Dou you want to hit or stand? (Type h/s) ");
+            String choice = scanner.nextLine();
 
+            if (choice.equalsIgnoreCase("h")) {
+                Card card = cardList.getFirst();
+                System.out.println("You drew: " + card);
+                playerScore += card.getCardValue();
+                if (playerScore > 21) {
+                    System.out.println("You Lost! Score: " + playerScore);
+                    break;
+                }
+            } else if (choice.equalsIgnoreCase("s")) {
+                playerTurn = false;
+            } else {
+                System.out.println("Invalid input. Remember to type 'h' or 's'.");
+            }
+        }
 
 	}//end main
 

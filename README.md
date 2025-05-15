@@ -5,7 +5,7 @@ Name: Uziel Ruelas Ramos
 Date: 5 / 14 / 2025
 
 -------------------------------
-What I Added to the Code: 
+What I Added To The Code: 
 
 Created methods in CardGame.java class to implement a simple Blackjack game. 
 It is a text based game where the user plays against the computer.
@@ -20,7 +20,16 @@ Game Rules:
 5. Like in classic blackjack rules, the player closes to 21 without busting wins. 
 
 -------------------------------
-How to play:
+
+Where Linked List is Used:
+
+The deck of cards is implemented using a linked list.
+The LinkList.java class manages the cards that are being read from the cards.txt file.
+The cards are then drawn using getFirst(), removes and returns the first card.
+I implement these methods from the LinkedList.java class into my Blackjack game.
+
+-------------------------------
+How to Play:
 
 The program is a text based game so the user would have to use the terminal to play.
 
