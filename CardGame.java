@@ -82,6 +82,28 @@ public class CardGame {
             }
         }
 
+        // Addition: Computers turn method. Shows the computers hand and calculates score.
+        int computerScore = 0;
+        System.out.println("\nComputers Hand: ");
+        while (computerScore < 17) {
+            Card card = cardList.getFirst();
+            System.out.println("Computer drew: " + card);
+            computerScore += card.getCardValue();
+        }
+
+        // Addition: Method to determine the winner of the round.
+        if (playerScore > 21) {
+            System.out.println("You bused. Computer won!");
+        } else if (computerScore > 21) {
+            System.out.println("Computer busted. You won!");
+        } else if (playerScore > computerScore) {
+            System.out.println("You won!");
+        } else if (computerScore > playerScore) {
+            System.out.println("Computer won!");
+        } else {
+            System.out.println("Its a tie!");
+        }
+
 	}//end main
 
 }//end class
